@@ -18,6 +18,9 @@ namespace UR2FinalExamComputerSciencePortion
         int mGrayMin = 70;
         int mGrayMax = 220;
 
+    
+
+
         //Serial Communication
         SerialPort mArduinoSerial = new SerialPort();
 
@@ -110,7 +113,8 @@ namespace UR2FinalExamComputerSciencePortion
                                 Emgu.CV.CvEnum.FontFace.HersheySimplex, 0.5, new MCvScalar(0, 0, 255), 2);
                             }
                             else
-                            {
+                           {
+                                mType = 3;
                                 CvInvoke.PutText(lDecoratedImage, "Rectangle", new Point(lCenterX, lCenterY),
                                 Emgu.CV.CvEnum.FontFace.HersheySimplex, 0.5, new MCvScalar(0, 0, 255), 2);
                                 mContoursCount = 3;
@@ -167,27 +171,27 @@ namespace UR2FinalExamComputerSciencePortion
 
         }
 
-        private void UpdateTextBox(TextBox textBox, string data)
+        private void UpdateTextBox(TextBox textBox, string mType)
         {
             if (textBox.InvokeRequired)
             {
-                textBox.Invoke(new Action(() => UpdateTextBox(textBox, data)));
+                textBox.Invoke(new Action(() => UpdateTextBox(textBox, mType)));
             }
             else
             {
-                textBox.Text = data;
+                textBox.Text = mType.ToString();
             }
         }
 
-        private void DisplayReceivedData(string data)
+        private void DisplayReceivedData(string mType)
         {
             if (InvokeRequired)
             {
-                Invoke(new Action<string>(DisplayReceivedData), data);
+                Invoke(new Action<string>(DisplayReceivedData), mType);
             }
             else
             {
-                textBoxOutput.AppendText(data + Environment.NewLine); // Use AppendText to add new data and a new line
+                textBoxOutput.AppendText(mType + Environment.NewLine); // Use AppendText to add new data and a new line
             }
         }
         private void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
@@ -203,14 +207,14 @@ namespace UR2FinalExamComputerSciencePortion
             }
         }
 
-        private void SendDataToArduino(string data)
+        private void SendDataToArduino(string mType)
         {
 
             try
             {
                 if (mArduinoSerial.IsOpen)
                 {
-                    mArduinoSerial.WriteLine(data);
+                    mArduinoSerial.WriteLine(mType.ToString());
                 }
                 else
                 {

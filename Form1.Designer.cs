@@ -82,7 +82,7 @@
             // 
             // CoordsTextBox
             // 
-            this.CoordsTextBox.Location = new System.Drawing.Point(1194, 449);
+            this.CoordsTextBox.Location = new System.Drawing.Point(1111, 411);
             this.CoordsTextBox.Name = "CoordsTextBox";
             this.CoordsTextBox.Size = new System.Drawing.Size(125, 27);
             this.CoordsTextBox.TabIndex = 4;
@@ -125,14 +125,15 @@
             // 
             // textBoxOutput
             // 
-            this.textBoxOutput.Location = new System.Drawing.Point(1184, 498);
+            this.textBoxOutput.Location = new System.Drawing.Point(1253, 411);
+            this.textBoxOutput.Multiline = true;
             this.textBoxOutput.Name = "textBoxOutput";
-            this.textBoxOutput.Size = new System.Drawing.Size(91, 27);
+            this.textBoxOutput.Size = new System.Drawing.Size(442, 146);
             this.textBoxOutput.TabIndex = 9;
             // 
             // SendSerial
             // 
-            this.SendSerial.Location = new System.Drawing.Point(1083, 499);
+            this.SendSerial.Location = new System.Drawing.Point(1137, 488);
             this.SendSerial.Name = "SendSerial";
             this.SendSerial.Size = new System.Drawing.Size(71, 24);
             this.SendSerial.TabIndex = 10;
