@@ -37,6 +37,8 @@
             this.GrayMax = new System.Windows.Forms.TrackBar();
             this.GrayMinLabel = new System.Windows.Forms.TextBox();
             this.GrayMaxLabel = new System.Windows.Forms.TextBox();
+            this.textBoxOutput = new System.Windows.Forms.TextBox();
+            this.SendSerial = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GrayPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DecoratedPictureBox)).BeginInit();
@@ -121,11 +123,30 @@
             this.GrayMaxLabel.Size = new System.Drawing.Size(69, 27);
             this.GrayMaxLabel.TabIndex = 8;
             // 
+            // textBoxOutput
+            // 
+            this.textBoxOutput.Location = new System.Drawing.Point(1184, 498);
+            this.textBoxOutput.Name = "textBoxOutput";
+            this.textBoxOutput.Size = new System.Drawing.Size(91, 27);
+            this.textBoxOutput.TabIndex = 9;
+            // 
+            // SendSerial
+            // 
+            this.SendSerial.Location = new System.Drawing.Point(1083, 499);
+            this.SendSerial.Name = "SendSerial";
+            this.SendSerial.Size = new System.Drawing.Size(71, 24);
+            this.SendSerial.TabIndex = 10;
+            this.SendSerial.Text = "send";
+            this.SendSerial.UseVisualStyleBackColor = true;
+            this.SendSerial.Click += new System.EventHandler(this.SendSerial_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1817, 583);
+            this.Controls.Add(this.SendSerial);
+            this.Controls.Add(this.textBoxOutput);
             this.Controls.Add(this.GrayMaxLabel);
             this.Controls.Add(this.GrayMinLabel);
             this.Controls.Add(this.GrayMax);
@@ -137,6 +158,7 @@
             this.Controls.Add(this.BrowseBtn);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GrayPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DecoratedPictureBox)).EndInit();
@@ -158,5 +180,7 @@
         private TrackBar GrayMax;
         private TextBox GrayMinLabel;
         private TextBox GrayMaxLabel;
+        private TextBox textBoxOutput;
+        private Button SendSerial;
     }
 }
